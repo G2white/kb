@@ -3,31 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>📚 知识库</title>
+<title>📚 知识库 - Knowledge Base</title>
 <style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --border: #2a2e3d;
+    --text: #e4e6f0;
+    --text-dim: #8b8fa3;
+    --accent: #6c8cff;
+    --radius: 16px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-    background: #0f1117;
-    color: #e4e6f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: var(--bg);
+    color: var(--text);
     min-height: 100vh;
-    margin: 0;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
   }
   h1 {
-    font-size: 2em;
+    font-size: 2.4em;
+    font-weight: 800;
+    margin-bottom: 8px;
     background: linear-gradient(135deg, #6c8cff, #b06cff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
   }
-  p { color: #8b8fa3; }
+  .subtitle { color: var(--text-dim); margin-bottom: 40px; font-size: 1.1em; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 32px rgba(108,140,255,0.15);
+  }
+  .card .icon { font-size: 2.4em; }
+  .card .title { font-size: 1.2em; font-weight: 700; color: #fff; }
+  .card .desc { color: var(--text-dim); font-size: 0.9em; line-height: 1.6; }
+  .card .tag {
+    display: inline-block;
+    background: #2a2e45;
+    color: var(--accent);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.78em;
+    font-weight: 600;
+    width: fit-content;
+    margin-top: 4px;
+  }
+  footer {
+    margin-top: 60px;
+    color: var(--text-dim);
+    font-size: 0.85em;
+  }
 </style>
 </head>
 <body>
-  <h1>📚 知识库</h1>
-  <p>正在建设中...</p>
+
+<h1>📚 知识库</h1>
+<p class="subtitle">市场研究报告 & 数据分析</p>
+
+<div class="grid">
+
+  <a class="card" href="utv-global-market-report.html">
+    <div class="icon">🌍</div>
+    <div class="title">全球 UTV 市场综合报告</div>
+    <div class="desc">全球 UTV 市场分析，覆盖北美、欧洲、亚太等主要区域市场，含 C 端娱乐和 B 端农业全场景。</div>
+    <div class="tag">2025-2026</div>
+  </a>
+
+</div>
+
+<footer>
+  <p>知识库 · 持续更新中 🔧</p>
+</footer>
+
 </body>
 </html>

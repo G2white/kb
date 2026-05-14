@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球 UTV 市场综合调研报告 2025-2026</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --card-hover: #22263a;
+    --border: #2a2e3d;
+    --text: #e4e6f0;
+    --text-dim: #8b8fa3;
+    --accent: #6c8cff;
+    --accent2: #ff6c6c;
+    --green: #4ecb71;
+    --yellow: #ffc847;
+    --blue: #4da6ff;
+    --purple: #b06cff;
+    --orange: #ff8c42;
+    --red: #ff5757;
+    --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 {
+    font-size: 2.6em;
+    font-weight: 800;
+    text-align: center;
+    padding: 60px 0 10px;
+    background: linear-gradient(135deg, var(--accent), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+  }
+  .subtitle { text-align: center; color: var(--text-dim); font-size: 1.1em; margin-bottom: 30px; }
+  h2 {
+    font-size: 1.6em;
+    font-weight: 700;
+    margin: 50px 0 20px;
+    padding-left: 14px;
+    border-left: 4px solid var(--accent);
+    color: #fff;
+  }
+  h3 { font-size: 1.2em; font-weight: 600; margin: 30px 0 14px; color: var(--blue); }
+  h4 { font-size: 1.05em; font-weight: 600; margin: 20px 0 10px; color: var(--text); }
+  section { margin-bottom: 20px; }
+  p, li { color: var(--text); margin-bottom: 8px; }
+  li { margin-left: 20px; }
+  strong { color: #fff; }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 30px 0 40px;
+  }
+  .hero-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .hero-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .hero-card .val {
+    font-size: 1.9em;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-card .label { color: var(--text-dim); font-size: 0.9em; margin-top: 6px; }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin: 16px 0 24px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95em; background: var(--card); }
+  th {
+    background: #232738;
+    color: var(--accent);
+    font-weight: 600;
+    text-align: left;
+    padding: 14px 16px;
+    white-space: nowrap;
+  }
+  td { padding: 12px 16px; border-top: 1px solid var(--border); color: var(--text); }
+  tr:hover td { background: var(--card-hover); }
+
+  .callout {
+    background: linear-gradient(135deg, #1e2440, #1a1d27);
+    border: 1px solid var(--accent);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .callout.warn { border-color: var(--yellow); border-left-color: var(--yellow); background: linear-gradient(135deg, #2a2520, #1a1d27); }
+  .callout.error { border-color: var(--red); border-left-color: var(--red); background: linear-gradient(135deg, #2a1a1a, #1a1d27); }
+  .callout.success { border-color: var(--green); border-left-color: var(--green); background: linear-gradient(135deg, #1a2a20, #1a1d27); }
+
+  .bar-chart { margin: 20px 0; }
+  .bar-row { display: flex; align-items: center; margin-bottom: 10px; font-size: 0.95em; }
+  .bar-label { width: 160px; text-align: right; padding-right: 14px; color: var(--text-dim); flex-shrink: 0; }
+  .bar-track { flex: 1; background: #232738; border-radius: 6px; height: 28px; position: relative; overflow: visible; }
+  .bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 8px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #fff;
+    min-width: 40px;
+    white-space: nowrap;
+    transition: width 0.6s ease;
+  }
+  .bar-c1 { background: linear-gradient(90deg, #6c8cff, #4da6ff); }
+  .bar-c2 { background: linear-gradient(90deg, #b06cff, #d08cff); }
+  .bar-c3 { background: linear-gradient(90deg, #4ecb71, #7ed89a); }
+  .bar-c4 { background: linear-gradient(90deg, #ffc847, #ffd67a); }
+  .bar-c5 { background: linear-gradient(90deg, #ff6c6c, #ff9a9a); }
+  .bar-c6 { background: linear-gradient(90deg, #ff8c42, #ffb07a); }
+  .bar-c7 { background: linear-gradient(90deg, #6c6c8c, #9a9ab8); }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 20px 0; }
+  .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 20px 0; }
+  @media (max-width: 800px) {
+    .two-col, .three-col { grid-template-columns: 1fr; }
+    h1 { font-size: 1.8em; }
+  }
+  .chart-box { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+  .chart-box h4 { color: var(--accent); margin-bottom: 16px; text-align: center; }
+
+  .tag {
+    display: inline-block;
+    background: #2a2e45;
+    color: var(--accent);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.82em;
+    font-weight: 600;
+    margin: 2px 4px 2px 0;
+  }
+  .tag.green { background: #1a3a2a; color: var(--green); }
+  .tag.yellow { background: #3a3420; color: var(--yellow); }
+  .tag.red { background: #3a1a1a; color: var(--accent2); }
+  .tag.purple { background: #2a1a3a; color: var(--purple); }
+  .tag.orange { background: #3a261a; color: var(--orange); }
+
+  .diff-wrong { color: var(--red); text-decoration: line-through; }
+  .diff-right { color: var(--green); font-weight: 700; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+  .source-list { font-size: 0.85em; color: var(--text-dim); }
+  .source-list li { margin-bottom: 6px; word-break: break-all; }
+  .source-list a { color: var(--blue); text-decoration: none; }
+  .source-list a:hover { text-decoration: underline; }
+
+  sup { color: var(--blue); cursor: help; font-size: 0.7em; padding-left: 2px; }
+
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 30px 0;
+  }
+  .toc h3 { margin-top: 0; color: var(--accent); }
+  .toc ul { columns: 2; column-gap: 30px; }
+  .toc li { margin-bottom: 4px; list-style: none; margin-left: 0; }
+  .toc a { color: var(--text); text-decoration: none; }
+  .toc a:hover { color: var(--accent); }
+  @media (max-width: 600px) { .toc ul { columns: 1; } }
+
+  footer {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85em;
+    padding: 40px 0 20px;
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>🌍 全球 UTV 市场综合调研报告</h1>
+<p class="subtitle">Utility Task Vehicle (Side-by-Side) · 2025-2026</p>
+
+<!-- TOC -->
+<div class="toc">
+  <h3>📑 目录</h3>
+  <ul>
+    <li><a href="#section-1">一、全球市场总览</a></li>
+    <li><a href="#section-2">二、北美市场(US + Canada)</a></li>
+    <li><a href="#section-3">三、欧洲市场</a></li>
+    <li><a href="#section-4">四、中国市场</a></li>
+    <li><a href="#section-5">五、澳大利亚/新西兰</a></li>
+    <li><a href="#section-6">六、拉丁美洲</a></li>
+    <li><a href="#section-7">七、其他区域</a></li>
+    <li><a href="#section-8">八、全球品牌格局</a></li>
+    <li><a href="#section-9">九、中国厂商深度</a></li>
+    <li><a href="#section-10">十、电动化趋势</a></li>
+    <li><a href="#section-11">十一、自动驾驶与精准农业</a></li>
+    <li><a href="#section-12">十二、配件后市场</a></li>
+    <li><a href="#section-13">十三、各区域监管对比</a></li>
+    <li><a href="#section-14">十四、机会与壁垒</a></li>
+    <li><a href="#sources">📚 数据来源</a></li>
+  </ul>
+</div>
+
+<!-- 一、全球总览 -->
+<h2 id="section-1">一、全球市场总览</h2>
+
+<div class="hero-grid">
+  <div class="hero-card">
+    <div class="val">$11.4-12.0B</div>
+    <div class="label">2024 全球 ATV+UTV 市场规模</div>
+  </div>
+  <div class="hero-card">
+    <div class="val">~90-100 万台</div>
+    <div class="label">2024 全球 UTV 年销量(估)</div>
+  </div>
+  <div class="hero-card">
+    <div class="val">$21.3B</div>
+    <div class="label">2034 预测市场规模</div>
+  </div>
+  <div class="hero-card">
+    <div class="val">6.1%</div>
+    <div class="label">CAGR 2025-2034 (EMR)</div>
+  </div>
+  <div class="hero-card">
+    <div class="val">$30 亿+</div>
+    <div class="label">配件后市场(2024)</div>
+  </div>
+  <div class="hero-card">
+    <div class="val">~4.5%</div>
+    <div class="label">电动 UTV 渗透率(NA 2024)</div>
+  </div>
+</div>
+
+<h3>1.1 全球区域分布</h3>
+<div class="chart-box">
+  <h4>2024 全球 ATV+UTV 市场区域结构(估算)</h4>
+  <div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">北美 (US+CA)</span><div class="bar-track"><div class="bar-fill bar-c1" style="width:60%">~60% ($6.8B)</div></div></div>
+    <div class="bar-row"><span class="bar-label">欧洲</span><div class="bar-track"><div class="bar-fill bar-c2" style="width:23%">23% ($2.75B)</div></div></div>
+    <div class="bar-row"><span class="bar-label">中国</span><div class="bar-track"><div class="bar-fill bar-c3" style="width:11%">~11% ($1.3B)</div></div></div>
+    <div class="bar-row"><span class="bar-label">澳新</span><div class="bar-track"><div class="bar-fill bar-c4" style="width:5%">5% ($0.55B)</div></div></div>
+    <div class="bar-row"><span class="bar-label">拉美</span><div class="bar-track"><div class="bar-fill bar-c5" style="width:5%">5% ($0.6B)</div></div></div>
+    <div class="bar-row"><span class="bar-label">其他(日韩/SEA/ME)</span><div class="bar-track"><div class="bar-fill bar-c7" style="width:4%">~4%</div></div></div>
+  </div>
+</div>
+
+<div class="callout">
+  <strong>📊 数据说明</strong>:不同分析机构对全球 UTV 市场规模的估算差异较大(<strong>$11.0B - $11.95B</strong> 区间),主要原因:(1) ATV 与 UTV 是否合并统计;(2) 是否含配件;(3) 是否含商用/golf cart。本报告主要采用 Expert Market Research 与 Polaris Market Research 数据。
+</div>
+
+<h3>1.2 主要分析师预测对比</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>机构</th><th>2024 规模</th><th>2030+ 预测</th><th>CAGR</th></tr></thead>
+  <tbody>
+    <tr><td>Expert Market Research</td><td>$11.79B</td><td>$21.31B (2034)</td><td>6.10%</td></tr>
+    <tr><td>Straits Research</td><td>$11.95B</td><td>—</td><td>6.80%</td></tr>
+    <tr><td>Polaris Market Research</td><td>$11.40B</td><td>—</td><td>8.6%</td></tr>
+    <tr><td>Market Reports World</td><td>$11.05B</td><td>—</td><td>—</td></tr>
+    <tr><td>Mordor Intelligence (NA)</td><td>—</td><td>—</td><td>~5-7%</td></tr>
+  </tbody>
+</table>
+</div>
+
+<hr class="divider">
+
+<!-- 二、北美 -->
+<h2 id="section-2">二、北美市场(US + Canada)</h2>
+
+<h3>2.1 美国 UTV 市场(2024)</h3>
+<div class="hero-grid">
+  <div class="hero-card"><div class="val">~$6.0B</div><div class="label">美国 UTV 规模(2023)</div></div>
+  <div class="hero-card"><div class="val">52 万台</div><div class="label">北美 2024 销量</div></div>
+  <div class="hero-card"><div class="val">-7.2%</div><div class="label">2024 同比</div></div>
+  <div class="hero-card"><div class="val">5.0%</div><div class="label">CAGR 2024-2032 (GMI)</div></div>
+</div>
+
+<h3>2.2 应用细分(北美 2024 销量结构)</h3>
+<div class="two-col">
+  <div class="chart-box">
+    <h4>消费者用途 (Consumer 85%)</h4>
+    <div class="bar-chart">
+      <div class="bar-row"><span class="bar-label">🏎️ 娱乐</span><div class="bar-track"><div class="bar-fill bar-c1" style="width:31%">31%</div></div></div>
+      <div class="bar-row"><span class="bar-label">🚜 农场/牧场</span><div class="bar-track"><div class="bar-fill bar-c3" style="width:29%">29%</div></div></div>
+      <div class="bar-row"><span class="bar-label">🏡 庄园</span><div class="bar-track"><div class="bar-fill bar-c4" style="width:10.5%">10.5%</div></div></div>
+      <div class="bar-row"><span class="bar-label">🏹 狩猎</span><div class="bar-track"><div class="bar-fill bar-c2" style="width:9%">9%</div></div></div>
+      <div class="bar-row"><span class="bar-label">🏠 住宅/家庭</span><div class="bar-track"><div class="bar-fill bar-c6" style="width:8.5%">8.5%</div></div></div>
+    </div>
+  </div>
+  <div class="chart-box">
+    <h4>车型分类(SVIA 口径)</h4>
+    <div class="bar-chart">
+      <div class="bar-row"><span class="bar-label">Utility Crossover</span><div class="bar-track"><div class="bar-fill bar-c1" style="width:48%">48%</div></div></div>
+      <div class="bar-row"><span class="bar-label">Pure Utility</span><div class="bar-track"><div class="bar-fill bar-c3" style="width:15.5%">15.5%</div></div></div>
+      <div class="bar-row"><span class="bar-label">Super Sport</span><div class="bar-track"><div class="bar-fill bar-c2" style="width:14.5%">14.5%</div></div></div>
+      <div class="bar-row"><span class="bar-label">Recreation Utility</span><div class="bar-track"><div class="bar-fill bar-c4" style="width:10%">10%</div></div></div>
+      <div class="bar-row"><span class="bar-label">Sport Recreation</span><div class="bar-track"><div class="bar-fill bar-c5" style="width:5.5%">5.5%</div></div></div>
+      <div class="bar-row"><span class="bar-label">Electric Utility</span><div class="bar-track"><div class="bar-fill bar-c7" style="width:4.5%">4.5%</div></div></div>
+    </div>
+  </div>
+</div>
+
+<h3>2.3 2024 北美 Top-10 畅销车型</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>#</th><th>车型</th><th>品牌</th><th>类别</th></tr></thead>
+  <tbody>
+    <tr><td>1-5</td><td>Polaris RZR / Ranger 系列(5 款)</td><td><span class="tag">Polaris</span></td><td>占总销量 9.5%</td></tr>
+    <tr><td>6</td><td>Can-Am Defender MAX Ltd. HD10 w/Cab</td><td><span class="tag purple">Can-Am</span></td><td>Utility w/Cab</td></tr>
+    <tr><td>7</td><td>John Deere XUV 835 系列</td><td><span class="tag green">JD</span></td><td>Utility Crossover</td></tr>
+    <tr><td>8</td><td>Can-Am Defender Ltd. HD10 w/Cab</td><td><span class="tag purple">Can-Am</span></td><td>Utility w/Cab</td></tr>
+    <tr><td>9</td><td>Kubota RTV-X1140 W</td><td><span class="tag orange">Kubota</span></td><td>Pure Utility</td></tr>
+    <tr><td>10</td><td>Kubota RTV-X1100 C/CW</td><td><span class="tag orange">Kubota</span></td><td>Pure Utility</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="subtitle" style="text-align:left">📌 Top-10 合计 ~10.65 万台,占北美 UTV 市场 <strong>20.5%</strong>。Polaris 单独 5 款上榜,合计 9.5%。Kubota 异军突起两款入榜,体现农业 UTV 强势。</p>
+
+<h3>2.4 加拿大市场</h3>
+<div class="table-wrap">
+<table>
+  <tbody>
+    <tr><td><strong>市场规模</strong></td><td>估算 ~$700M-1B(2024 区间),北美 ~15% 体量</td></tr>
+    <tr><td><strong>CAGR (2024-2032)</strong></td><td>5.30%</td></tr>
+    <tr><td><strong>主导省份</strong></td><td>Ontario(OFATV 俱乐部网络)、Quebec(BRP 总部)、Alberta</td></tr>
+    <tr><td><strong>BRP 主场</strong></td><td>BRP 总部位于魁北克 Valcourt,Can-Am Off-Road 加拿大本土地位强</td></tr>
+    <tr><td><strong>主要玩家</strong></td><td>BRP/Can-Am、Polaris、Honda Canada、Yamaha Canada、Kawasaki、CFMoto、Argo(本土)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<hr class="divider">
+
+<!-- 三、欧洲 -->
+<h2 id="section-3">三、欧洲市场</h2>
+
+<div class="hero-grid">
+  <div class="hero-card"><div class="val">$2.75B</div><div class="label">2024 ATV+UTV 规模</div></div>
+  <div class="hero-card"><div class="val">$4.70B</div><div class="label">2034 预测</div></div>
+  <div class="hero-card"><div class="val">5.50%</div><div class="label">CAGR 2025-2034</div></div>
+  <div class="hero-card"><div class="val">$362.84M</div><div class="label">德国(最大)2024</div></div>
+</div>
+
+<h3>3.1 欧洲核心特征</h3>
+<ul>
+  <li>🎯 <strong>CFMoto 在欧洲占主导</strong>:欧洲 ATV 市场份额 <strong>25%</strong>,在 <strong>17 个国家排名第一</strong>(德国、奥地利、爱沙尼亚、捷克、西班牙、瑞典、葡萄牙等)<sup>[7]</sup></li>
+  <li>🌲 <strong>用途结构与美国差异</strong>:狩猎、林业、葡萄园/果园农业占比更高;赛事/Overlanding 占比低</li>
+  <li>📋 <strong>法规复杂</strong>:T-class(拖拉机类)车辆同源化,各国对路权要求不同(法国 T3a/T3b、德国 LOF、英国 T-Reg)</li>
+  <li>🏔️ <strong>德国主导</strong>:中部和南部森林山地适合 ATV/UTV 应用</li>
+</ul>
+
+<h3>3.2 欧洲主要市场国家</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>国家</th><th>2024 估算规模</th><th>主要用途</th><th>领先品牌</th></tr></thead>
+  <tbody>
+    <tr><td>🇩🇪 德国</td><td>$362.84M</td><td>林业、狩猎、农业、休闲</td><td>CFMoto(第一)、Polaris、Can-Am</td></tr>
+    <tr><td>🇫🇷 法国</td><td>$250-300M(估)</td><td>农业、林业、户外运动</td><td>CFMoto、Yamaha、Honda</td></tr>
+    <tr><td>🇬🇧 英国</td><td>$200-250M(估)</td><td>狩猎、地产、农业</td><td>Polaris、CFMoto、Honda</td></tr>
+    <tr><td>🇮🇹 意大利</td><td>$150-180M(估)</td><td>葡萄园、农业</td><td>CFMoto、Yamaha</td></tr>
+    <tr><td>🇪🇸 西班牙</td><td>$120-150M(估)</td><td>橄榄园、酒庄、狩猎</td><td>CFMoto(第一)、Honda</td></tr>
+    <tr><td>北欧(SE/FI/NO)</td><td>$200-250M(合计估)</td><td>林业、雪地、狩猎</td><td>CFMoto(SE 第一)、Polaris、Honda</td></tr>
+  </tbody>
+</table>
+</div>
+
+<hr class="divider">
+
+<!-- 四、中国 -->
+<h2 id="section-4">四、中国市场</h2>
+
+<div class="hero-grid">
+  <div class="hero-card"><div class="val">$1.20B</div><div class="label">2023 ATV+UTV 规模</div></div>
+  <div class="hero-card"><div class="val">$1.81B</div><div class="label">2030 预测</div></div>
+  <div class="hero-card"><div class="val">5.1%</div><div class="label">CAGR 2024-2030(综合)</div></div>
+  <div class="hero-card"><div class="val">9.2%</div><div class="label">UTV CAGR (至 2028)</div></div>
+</div>
+
+<h3>4.1 中国市场特征</h3>
+<ul>
+  <li>🏭 <strong>制造大国 ≠ 消费大国</strong>:中国是全球 UTV 最大制造与出口基地之一,但内需相对较小</li>
+  <li>🚜 <strong>用途偏 B 端</strong>:农业机械化、矿区/园区巡查、安保、应急救援为主,休闲消费在崛起但低于美欧</li>
+  <li>⚡ <strong>电动化领先</strong>:依托锂电池产业链,电动 UTV 在中国有 12% 年增长(高于全球均速)</li>
+  <li>📈 <strong>出口爆发</strong>:CFMoto 2020-2024 国际销售增长 <strong>1307%</strong><sup>[8]</sup></li>
+  <li>🏞️ <strong>排量分布</strong>:400-800cc 区间(休闲与轻商两用)最受欢迎,因价格亲民、操控灵活</li>
+</ul>
+
+<h3>4.2 中国主要品牌排名(国内+出口综合)</h3>
+<div class="chart-box">
+  <h4>中国 UTV 品牌实力(2024 综合,含出口)</h4>
+  <div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">CFMoto 春风动力</span><div class="bar-track"><div class="bar-fill bar-c1" style="width:42%">42%</div></div></div>
+    <div class="bar-row"><span class="bar-label">Segway 赛格威</span><div class="bar-track"><div class="bar-fill bar-c2" style="width:18%">18%</div></div></div>
+    <div class="bar-row"><span class="bar-label">Hisun 海森</span><div class="bar-track"><div class="bar-fill bar-c3" style="width:15%">15%</div></div></div>
+    <div class="bar-row"><span class="bar-label">Linhai 林海</span><div class="bar-track"><div class="bar-fill bar-c4" style="width:8%">8%</div></div></div>
+    <div class="bar-row"><span class="bar-label">Loncin 隆鑫</span><div class="bar-track"><div class="bar-fill bar-c5" style="width:6%">6%</div></div></div>
+    <div class="bar-row"><span class="bar-label">Kayo 凯越</span><div class="bar-track"><div class="bar-fill bar-c6" style="width:5%">5%</div></div></div>
+    <div class="bar-row"><span class="bar-label">其他(BMS/Aodes/Massimo)</span><div class="bar-track"><div class="bar-fill bar-c7" style="width:6%">6%</div></div></div>
+  </div>
+</div>
+<p class="subtitle" style="text-align:left">⚠️ 占比为本报告估算,各家未披露分品类销量。CFMoto 是上市公司(603129.SH),数据相对可靠。</p>
+
+<hr class="divider">
+
+<!-- 五、澳新 -->
+<h2 id="section-5">五、澳大利亚 / 新西兰</h2>
+
+<div class="hero-grid">
+  <div class="hero-card"><div class="val">$555M</div><div class="label">澳洲 2023 ATV+UTV</div></div>
+  <div class="hero-card"><div class="val">$980M</div><div class="label">2030 预测</div></div>
+  <div class="hero-card"><div class="val">7.7%</div><div class="label">CAGR 2023-2030</div></div>
+  <div class="hero-card"><div class="val">$1,200</div><div class="label">州政府 UTV 购置补贴</div></div>
+</div>
+
+<h3>5.1 澳洲特殊监管:全球最严 ROV 标准</h3>
+<div class="callout warn">
+  <strong>⚠️ 监管震荡事件</strong>:2021 年 10 月起,澳大利亚《Consumer Goods (Quad Bikes) Safety Standard 2019》强制要求所有新售四轮 ATV 必须配备 <strong>OPD(Operator Protection Device,翻车保护装置)</strong>。这导致 <strong>Honda、Yamaha、Polaris 等品牌退出澳洲 ATV 市场</strong>,转而推动 UTV(本身有 ROPS 翻滚架)替代 ATV,无意中加速了 UTV 渗透。
+</div>
+
+<h3>5.2 农场安全补贴(各州)</h3>
+<ul>
+  <li><strong>维多利亚州</strong>:$6M 安全补贴方案,合格农户可获 <strong>$600/台</strong>(最多 2 台)用于改装 OPD,或 <strong>$1,200</strong> 用于购置更安全的 ATV/UTV</li>
+  <li><strong>新南威尔士 SafeWork</strong>:农户两笔 $1,000 补贴(改装),工人 $400 补贴,SSV 购置补贴 <strong>$1,000/台</strong></li>
+  <li><strong>路权</strong>:农用最高时速 50 km/h(打药 40 km/h),需配灯、转向、镜、琥珀警示灯</li>
+</ul>
+
+<h3>5.3 用途主导:农业为王</h3>
+<p>澳洲市场与美国差异显著——农场、林业、搜救、偏远地区维护占绝对主导,娱乐占比低。Kubota、Yamaha、Honda 在农用细分长期强势,Polaris Ranger 紧追,CFMoto 性价比切入。</p>
+
+<hr class="divider">
+
+<!-- 六、拉美 -->
+<h2 id="section-6">六、拉丁美洲</h2>
+
+<div class="hero-grid">
+  <div class="hero-card"><div class="val">$601M</div><div class="label">2023 ATV+UTV 规模</div></div>
+  <div class="hero-card"><div class="val">$823.5M</div><div class="label">2030 预测</div></div>
+  <div class="hero-card"><div class="val">3.8%</div><div class="label">CAGR 2024-2030</div></div>
+  <div class="hero-card"><div class="val">11.5%</div><div class="label">电动 UTV CAGR (2024-2032)</div></div>
+</div>
+
+<h3>6.1 区域细分</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>国家</th><th>2024 规模</th><th>主要用途</th><th>备注</th></tr></thead>
+  <tbody>
+    <tr><td>🇧🇷 巴西</td><td>$143.46M</td><td>大农场、冒险旅游、林业</td><td>区域第一,潘塔纳尔/亚马逊偏远区需求大</td></tr>
+    <tr><td>🇲🇽 墨西哥</td><td>~$120M(估)</td><td>沙漠越野、牧场、矿区</td><td>美墨边境贸易便利</td></tr>
+    <tr><td>🇦🇷 阿根廷</td><td>~$80M(估)</td><td>潘帕斯草原牧场、农场</td><td>受经济波动影响大</td></tr>
+    <tr><td>🇨🇱 智利</td><td>~$60M(估)</td><td>葡萄园、矿区、林业</td><td>欧洲品牌渗透高</td></tr>
+    <tr><td>🇨🇴 哥伦比亚</td><td>~$45M(估)</td><td>咖啡园、安保、应急</td><td>—</td></tr>
+  </tbody>
+</table>
+</div>
+
+<hr class="divider">
+
+<!-- 七、其他区域 -->
+<h2 id="section-7">七、其他区域</h2>
+
+<div class="three-col">
+  <div class="chart-box">
+    <h4>🇯🇵 日本 / 🇰🇷 韩国</h4>
+    <ul>
+      <li>市场:估 $200-300M 合计</li>
+      <li>日本本土 Honda/Yamaha/Kawasaki 强势</li>
+      <li>主要用途:林业、果园、雪地</li>
+      <li>休闲市场极小(空间受限)</li>
+    </ul>
+  </div>
+  <div class="chart-box">
+    <h4>🌴 东南亚</h4>
+    <ul>
+      <li>泰国/印尼:旅游租赁市场</li>
+      <li>菲律宾:岛屿农业</li>
+      <li>越南:橡胶/咖啡园</li>
+      <li>规模合计估 $150-200M</li>
+    </ul>
+  </div>
+  <div class="chart-box">
+    <h4>🕌 中东</h4>
+    <ul>
+      <li>沙特/UAE:沙丘越野旅游</li>
+      <li>Can-Am Maverick / Polaris RZR 主力</li>
+      <li>租赁/Dubai 沙漠 Safari 一大场景</li>
+      <li>规模估 $150-250M(高增长)</li>
+    </ul>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- 八、品牌格局 -->
+<h2 id="section-8">八、全球品牌格局</h2>
+
+<h3>8.1 2024 北美 UTV 销量品牌排序</h3>
+<div class="chart-box">
+  <h4>Top 10 品牌(北美 2024,按销量)</h4>
+  <div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">1. Polaris</span><div class="bar-track"><div class="bar-fill bar-c1" style="width:38%">~38%(估)</div></div></div>
+    <div class="bar-row"><span class="bar-label">2. Can-Am (BRP)</span><div class="bar-track"><div class="bar-fill bar-c2" style="width:22%">~22%</div></div></div>
+    <div class="bar-row"><span class="bar-label">3. Kawasaki</span><div class="bar-track"><div class="bar-fill bar-c3" style="width:10%">~10%</div></div></div>
+    <div class="bar-row"><span class="bar-label">4. Honda</span><div class="bar-track"><div class="bar-fill bar-c4" style="width:8%">~8%</div></div></div>
+    <div class="bar-row"><span class="bar-label">5. John Deere</span><div class="bar-track"><div class="bar-fill bar-c5" style="width:6%">~6%</div></div></div>
+    <div class="bar-row"><span class="bar-label">6. Kubota</span><div class="bar-track"><div class="bar-fill bar-c6" style="width:5%">~5%</div></div></div>
+    <div class="bar-row"><span class="bar-label">7. CFMoto</span><div class="bar-track"><div class="bar-fill bar-c7" style="width:4%">~4%</div></div></div>
+    <div class="bar-row"><span class="bar-label">8. Yamaha</span><div class="bar-track"><div class="bar-fill bar-c1" style="width:3%">~3%</div></div></div>
+    <div class="bar-row"><span class="bar-label">9. Club Car</span><div class="bar-track"><div class="bar-fill bar-c4" style="width:2%">~2%</div></div></div>
+    <div class="bar-row"><span class="bar-label">10. Cushman/EZGO</span><div class="bar-track"><div class="bar-fill bar-c6" style="width:1.5%">~1.5%</div></div></div>
+  </div>
+</div>
+<p class="subtitle" style="text-align:left">📌 基于 Powersports Business 2024 Top-10 brand list 排序,具体百分比为本报告估算。<strong>CFMoto 首次进入北美前十,标志中国品牌真正打入主流市场。</strong></p>
+
+<h3>8.2 主要上市公司 2024 业绩</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>公司</th><th>代码</th><th>2024 营收</th><th>UTV 相关业务</th><th>关键动态</th></tr></thead>
+  <tbody>
+    <tr><td>Polaris Inc.</td><td><span class="tag">NYSE: PII</span></td><td><strong>$71.75 亿</strong>(-20% YoY)</td><td>Off-Road ~$50 亿</td><td>RANGER XD 1500 上市;Kinetic 电动持续;库存调整</td></tr>
+    <tr><td>BRP Inc.</td><td><span class="tag purple">TSX: DOO</span></td><td>$76-78 亿(FY25)</td><td>Year-Round 占 53-54%</td><td>Can-Am SSV Q1 历史最佳;Marine 业务剥离</td></tr>
+    <tr><td>Honda</td><td><span class="tag">TSE: 7267</span></td><td>$260 亿+(全集团)</td><td>Pioneer / Talon</td><td>Pioneer 1000 起售 $17,599</td></tr>
+    <tr><td>Yamaha Motor</td><td><span class="tag">TSE: 7272</span></td><td>$50 亿+(全集团)</td><td>Wolverine / Viking</td><td>RMAX2 1000 起售 $26,199(10 年皮带保修)</td></tr>
+    <tr><td>Deere &amp; Co.</td><td><span class="tag green">NYSE: DE</span></td><td>$510 亿(FY24,-16%)</td><td>Gator,Small Ag &amp; Turf 段</td><td>XUV 845/875 新增;自动驾驶 5ML 发布</td></tr>
+    <tr><td>Kawasaki</td><td><span class="tag">TSE: 7012</span></td><td>—(摩托业务约 ¥5,000 亿)</td><td>Mule / Teryx</td><td>农业 UTV 强势,北美 #3</td></tr>
+    <tr><td>Kubota</td><td><span class="tag orange">TSE: 6326</span></td><td>$200 亿+(全集团)</td><td>RTV 系列</td><td>北美 UTV Top-10 占 2 款</td></tr>
+    <tr><td>Textron</td><td><span class="tag yellow">NYSE: TXT</span></td><td>$140 亿(2024)</td><td>Arctic Cat / Wildcat / Workman / Club Car / Cushman</td><td>多品牌矩阵,Club Car/Cushman 商用强</td></tr>
+    <tr><td>CFMoto</td><td><span class="tag red">SH: 603129</span></td><td>¥120 亿+(2024 估)</td><td>UForce / ZForce / CForce</td><td>欧洲 25% ATV 份额,NA 销量 +48%(2025)</td></tr>
+    <tr><td>Segway-Ninebot</td><td><span class="tag red">SH: 689009</span></td><td>¥150 亿(2024)</td><td>Fugleman / Villain(独立 Powersports 部门)</td><td>北美 dealer 网络扩张中</td></tr>
+  </tbody>
+</table>
+</div>
+
+<hr class="divider">
+
+<!-- 九、中国厂商深度 -->
+<h2 id="section-9">九、中国厂商深度剖析</h2>
+
+<h3>9.1 CFMoto 春风动力(行业领头羊)</h3>
+<div class="callout">
+  <strong>核心数据</strong>:股票代码 603129.SH,杭州总部,1989 年成立。与 KTM/Pierer Mobility 有长期合资,共享平台技术。美国子公司 CFMoto USA(明尼苏达 Plymouth)。<br>
+  <strong>2020-2024 国际销售增长 1307%</strong>。2025 年区域增长:欧洲 +40%、北美 +48%、拉美 +42.9%、东盟 +42.9%<sup>[7][8]</sup>。
+</div>
+<ul>
+  <li><strong>产品线</strong>:ZForce(运动 SxS,800/950/1000cc)、UForce(工具 UTV,600/800/1000cc)、CForce(ATV)</li>
+  <li><strong>欧洲第一</strong>:ATV 类 25% 份额,17 国第一(超过 BRP/Polaris)</li>
+  <li><strong>北美突破</strong>:2024 进入北美销量 Top-10 品牌,成为唯一上榜的中国品牌</li>
+  <li><strong>渠道策略</strong>:在欧洲走摩托/越野独立 dealer 网,在北美 ~300 家 dealer 起步</li>
+</ul>
+
+<h3>9.2 Segway Powersports(Segway-Ninebot 子业务)</h3>
+<ul>
+  <li><strong>母公司</strong>:Segway-Ninebot,688009.SH(科创板)</li>
+  <li><strong>主力车型</strong>:Fugleman UT6 / UT10 / UT10 E(电动)— Utility 工具型;Villain SX10 / Super Villain SX20 — Sport 运动型</li>
+  <li><strong>定价</strong>:Villain SX10 $16,299-$19,699,Fugleman $14,000 区间起步</li>
+  <li><strong>渠道</strong>:北美独立 dealer 网络快速扩张,与 RideNow Powersports 等大经销集团合作</li>
+  <li><strong>电动 UTV</strong>:Fugleman UT10 E 已上市,定位中端电动 utility</li>
+</ul>
+
+<h3>9.3 Hisun 海森</h3>
+<ul>
+  <li><strong>北美布局</strong>:美国子公司 Hisun Motors Corp. USA,德州 McKinney 总部 + 装配/分销中心(2014 年设立)</li>
+  <li><strong>北美销量</strong>:Hisun 在美国销量排名 <strong>第五</strong>(2024)</li>
+  <li><strong>OEM 模式</strong>:历史上为 Coleman Powersports、Bennche、Massimo、Cub Cadet Challenger 系列供货</li>
+  <li><strong>2024 新动向</strong>:AXIS 平台 5 月发布,AXIS X550 / XS750 通过 <strong>Lowe's 全美</strong>独家分销 — 大卖场渠道突破</li>
+  <li><strong>主力车型</strong>:Stryker、Sector、Strike、Vector、Tactic 等</li>
+</ul>
+
+<h3>9.4 其他中国品牌</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>品牌</th><th>母公司/特点</th><th>UTV 产品线</th><th>出海情况</th></tr></thead>
+  <tbody>
+    <tr><td>Linhai 林海</td><td>江浙厂,小排量摩托起家</td><td>500-800cc UTV</td><td>欧洲、东南亚出口</td></tr>
+    <tr><td>Loncin 隆鑫</td><td>重庆,为 BMW Motorrad 供 650/850 发动机</td><td>小排量农用 UTV</td><td>美国少量,主供国内</td></tr>
+    <tr><td>Kayo 凯越</td><td>重庆,运动型为主</td><td>青少年 UTV/ATV</td><td>欧美中端</td></tr>
+    <tr><td>Aodes Industries</td><td>新势力,主打高规格</td><td>大排量 SxS</td><td>北美/加拿大经销网</td></tr>
+    <tr><td>Massimo (海外注册)</td><td>德州,实质中国供应链</td><td>全 UTV 线</td><td>Walmart 等大卖场</td></tr>
+    <tr><td>BMS Motors</td><td>德州,中国进口装配</td><td>Stallion、Beast、Avenger</td><td>北美中低端</td></tr>
+  </tbody>
+</table>
+</div>
+
+<hr class="divider">
+
+<!-- 十、电动化 -->
+<h2 id="section-10">十、电动化趋势</h2>
+
+<div class="callout">
+  <strong>📊 全球电动 UTV 市占</strong>:北美 2024 电动 UTV(EUV)细分占 <strong>4.5%</strong> 销量;中国电动 UTV 年增 ~12%;拉美电动 CAGR <strong>11.5%</strong>(2024-2032);欧洲在 T-class 法规下电动渗透有政策推力。<br>
+  整体处于<strong>早期</strong>,远低于乘用车电动化进度。
+</div>
+
+<h3>10.1 主流电动 UTV 车型对比</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>车型</th><th>品牌</th><th>电池</th><th>续航</th><th>功率</th><th>MSRP</th></tr></thead>
+  <tbody>
+    <tr><td>Ranger XP Kinetic Premium</td><td>Polaris</td><td>14.9 kWh Li-ion</td><td>45 mi</td><td>110 hp</td><td>~$24,999</td></tr>
+    <tr><td>Ranger XP Kinetic Ultimate</td><td>Polaris</td><td>29.8 kWh Li-ion</td><td>80 mi</td><td>110 hp</td><td>~$29,999</td></tr>
+    <tr><td>Stag</td><td>Volcon</td><td>42 kWh</td><td>100+ mi</td><td>125 hp(boost 143.5)</td><td>$39,999</td></tr>
+    <tr><td>Fugleman UT10 E</td><td>Segway</td><td>~15 kWh(估)</td><td>~40 mi</td><td>~50 kW</td><td>~$20,000</td></tr>
+    <tr><td>Sector E1</td><td>Hisun</td><td>~10 kWh</td><td>~30 mi</td><td>~30 kW</td><td>~$15,000</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>10.2 关键判断</h3>
+<ul>
+  <li>📍 <strong>农用先行</strong>:工具型 UTV 因日均行驶距离短(<30 mi)、固定基地充电方便,比娱乐型电动化更容易</li>
+  <li>🚫 <strong>BRP 暂停电动 SxS</strong>:2025 年 BRP 在成本削减中<strong>停止/推迟</strong>电动 Can-Am Off-Road 项目,聚焦 Origin/Pulse 电动摩托</li>
+  <li>🇨🇳 <strong>中国厂商电动优势</strong>:依托锂电产业链与电机供应链,中国电动 UTV 性价比领先</li>
+  <li>⚠️ <strong>初创公司风险</strong>:Volcon 经历产品策略调整(Stag 一度从电动转回 ICE);Nikola Powersports 项目终止</li>
+</ul>
+
+<hr class="divider">
+
+<!-- 十一、自动驾驶 -->
+<h2 id="section-11">十一、自动驾驶与精准农业</h2>
+
+<h3>11.1 关键玩家</h3>
+<ul>
+  <li>🟢 <strong>John Deere</strong>:目标 2030 实现完全自主农业。2024 发布 5ML 特种作物拖拉机的工厂/改装自动驾驶套件;460E 铰接式自卸车与 QuikTrak 商用割草机的套件在研。<strong>Gator UTV 暂未集成自动驾驶</strong>,但精准农业平台 Operations Center 与 Gator 数据互通</li>
+  <li>🤖 <strong>Sabanto Steward</strong>:第三方自动驾驶套件,兼容 John Deere 5075E / 5100M / 5100E、Fendt 700 Vario、Kubota M5。可改装现有拖拉机,2024 持续扩展兼容机型</li>
+  <li>🚜 <strong>Burro Robotics</strong>:费城公司,小型自主搬运机器人,JD Startup Collaborator 项目成员。专注辅助型而非全自主</li>
+  <li>🍇 <strong>Bear Flag Robotics</strong>:已被 John Deere 收购,自动驾驶拖拉机核心技术来源之一</li>
+</ul>
+
+<h3>11.2 自动驾驶 UTV 应用场景</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>场景</th><th>需求强度</th><th>技术难度</th><th>商业化程度</th></tr></thead>
+  <tbody>
+    <tr><td>🌾 大田巡查/施药</td><td>⭐⭐⭐⭐⭐</td><td>低-中(开放地形)</td><td>试点中</td></tr>
+    <tr><td>🍇 果园/葡萄园打药</td><td>⭐⭐⭐⭐</td><td>中(行间导航)</td><td>商用早期</td></tr>
+    <tr><td>🐄 牧场巡牲畜</td><td>⭐⭐⭐</td><td>中-高(动态环境)</td><td>研发期</td></tr>
+    <tr><td>🌲 林业巡山</td><td>⭐⭐⭐</td><td>高(GPS 受限+地形复杂)</td><td>研发期</td></tr>
+    <tr><td>🏗️ 厂区/园区物流</td><td>⭐⭐⭐⭐</td><td>低(结构化)</td><td>商用早期</td></tr>
+    <tr><td>🪖 军用/边境巡逻</td><td>⭐⭐⭐</td><td>中-高</td><td>试点中</td></tr>
+  </tbody>
+</table>
+</div>
+
+<hr class="divider">
+
+<!-- 十二、配件 -->
+<h2 id="section-12">十二、配件后市场</h2>
+
+<div class="hero-grid">
+  <div class="hero-card"><div class="val">$3.0-4.5B</div><div class="label">2024 ATV+UTV 配件市场</div></div>
+  <div class="hero-card"><div class="val">4.6-7.8%</div><div class="label">配件 CAGR(分析师区间)</div></div>
+  <div class="hero-card"><div class="val">$7.2B</div><div class="label">2033 预测</div></div>
+  <div class="hero-card"><div class="val">~30%</div><div class="label">车主在购入 1 年内改装比例</div></div>
+</div>
+
+<h3>12.1 主要配件品牌</h3>
+<ul>
+  <li><strong>SuperATV</strong>:印第安纳州,UTV 配件最大独立品牌,产品线最全</li>
+  <li><strong>Pro Armor</strong>(Polaris 旗下):专业改装,与 RZR 强绑定</li>
+  <li><strong>Rugged Radios</strong>:通讯系统(对讲、车内通讯)细分龙头</li>
+  <li><strong>RIGID Industries</strong>:LED 灯具</li>
+  <li><strong>Method Race Wheels</strong>:轮毂</li>
+  <li><strong>Tusk Off-Road</strong>:Rocky Mountain ATV/MC 自营品牌,性价比定位</li>
+  <li><strong>ITP / Maxxis / BFGoodrich</strong>:轮胎主力</li>
+</ul>
+
+<h3>12.2 配件大类</h3>
+<div class="three-col">
+  <div class="chart-box">
+    <h4>🛡️ 防护改装</h4>
+    <ul><li>底护板</li><li>笼架/Cage</li><li>挡风/车顶</li><li>门板</li></ul>
+  </div>
+  <div class="chart-box">
+    <h4>🚀 性能升级</h4>
+    <ul><li>排气/进气</li><li>ECU 刷写</li><li>悬挂/减震</li><li>差速锁</li></ul>
+  </div>
+  <div class="chart-box">
+    <h4>🎯 功能扩展</h4>
+    <ul><li>绞盘</li><li>射灯/LED</li><li>GPS/通讯</li><li>音响系统</li></ul>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- 十三、监管对比 -->
+<h2 id="section-13">十三、各区域监管对比</h2>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>区域</th><th>核心法规</th><th>路权</th><th>安全要求</th><th>排放</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>🇺🇸 美国</td>
+      <td>ANSI/ROHVA 1(SxS)、ANSI B71.9(农用)</td>
+      <td>~30 个州允许 UTV 上路</td>
+      <td>头盔法各州不一</td>
+      <td>EPA Tier 4(柴油)</td>
+    </tr>
+    <tr>
+      <td>🇨🇦 加拿大</td>
+      <td>联邦 + 省级双层</td>
+      <td>Quebec/Ontario 多数允许</td>
+      <td>OFATV 等省级俱乐部管理</td>
+      <td>跟随 EPA</td>
+    </tr>
+    <tr>
+      <td>🇪🇺 欧盟</td>
+      <td>(EU) 167/2013 T-class<br>(EU) 168/2013 L-class</td>
+      <td>T3a/T3b 可上公共道路</td>
+      <td>EU 制造商责任</td>
+      <td>Euro 5(2020)/Euro 5+</td>
+    </tr>
+    <tr>
+      <td>🇨🇳 中国</td>
+      <td>GB 24155(电动)、GB/T 摩托类</td>
+      <td>多数城市禁限,农用许可</td>
+      <td>暂无统一 OPD 标准</td>
+      <td>国六(部分适用)</td>
+    </tr>
+    <tr>
+      <td>🇦🇺 澳大利亚</td>
+      <td><strong>Quad Bikes Safety Standard 2019</strong>(强制 OPD)</td>
+      <td>农用 50 km/h(打药 40)</td>
+      <td><strong>OPD 强制(全球最严)</strong></td>
+      <td>跟随 Euro</td>
+    </tr>
+    <tr>
+      <td>🇯🇵 日本</td>
+      <td>道路运送车両法(部分类别需登记)</td>
+      <td>受限,主要私人土地使用</td>
+      <td>JIS 标准</td>
+      <td>日本机动车排放</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<hr class="divider">
+
+<!-- 十四、机会与壁垒 -->
+<h2 id="section-14">十四、机会与壁垒</h2>
+
+<div class="two-col">
+  <div class="chart-box">
+    <h4>🚧 进入壁垒</h4>
+    <ul>
+      <li><strong>经销网络</strong> — Polaris 北美 ~1,500+ Off-Road dealer,BRP 全球 ~3,200,建网 5-10 年</li>
+      <li><strong>品牌信任</strong> — Polaris 30+ 年、BRP 10+ 年累积,Top-10 车型集中度高(20.5% 市占在 10 款车上)</li>
+      <li><strong>规模经济</strong> — 年销 <5 万台几乎不可能成本竞争</li>
+      <li><strong>专利护城河</strong> — CVT 传动、悬挂结构、动力总成专利密集</li>
+      <li><strong>合规壁垒</strong> — 澳洲 OPD、美国 ROHVA、欧盟 T-class 等多套体系合规成本高</li>
+    </ul>
+  </div>
+  <div class="chart-box">
+    <h4>💡 机会窗口</h4>
+    <ul>
+      <li>🔋 <strong>电动 UTV</strong> — 4.5% 渗透,中国厂商在锂电与三电系统上有产业链优势</li>
+      <li>🤖 <strong>自动驾驶</strong> — 农业巡田/打药场景明确,JD 2030 自动农业目标</li>
+      <li>📦 <strong>配件/改装</strong> — $30-45 亿市场,低壁垒高利润,SuperATV 模式可复制</li>
+      <li>🌍 <strong>二手/租赁平台</strong> — 二手流通效率低,无强势数字化平台</li>
+      <li>🇨🇳 <strong>中国品牌出海</strong> — CFMoto 已证明 ATV 可做到欧洲 25%,UTV 后续可期</li>
+      <li>🎒 <strong>Overlanding</strong> — Polaris Xpedition $28,999-$39,999 价位带,Honda/Yamaha 尚未跟进</li>
+      <li>🏌️ <strong>商用/园区</strong> — Club Car/Cushman 之外仍有空间,如机场、安保、园林</li>
+    </ul>
+  </div>
+</div>
+
+<h3>14.1 重大动态(2024-2026)</h3>
+<ul>
+  <li>📉 <strong>2024 行业全面下行</strong>:北美 UTV -7.2%,Polaris 营收 -20%,BRP Year-Round 营收 -17.4%(Q4)。主因经销商去库存 + 高利率</li>
+  <li>🆕 <strong>Polaris RANGER XD 1500 全系扩展</strong>:三缸 1500cc,110 hp,行业最强工具型</li>
+  <li>🛍️ <strong>Hisun 大卖场渠道突破</strong>:AXIS 平台通过 Lowe's 独家上架</li>
+  <li>🇨🇳 <strong>CFMoto 进入北美 Top-10</strong>:首个中国品牌入选 PSB 北美年度 Top-10</li>
+  <li>🔌 <strong>BRP 暂停电动 SxS</strong>:成本压力下取消 Can-Am Off-Road EV 项目</li>
+  <li>🚙 <strong>Polaris 2025 RZR Pro 升级</strong>:对标 Can-Am Maverick R 高端运动 SxS</li>
+  <li>🧪 <strong>JD 5ML 自动驾驶发布</strong>:农业自主化向小型化推进</li>
+</ul>
+
+<hr class="divider">
+
+<!-- 来源 -->
+<h2 id="sources">📚 数据来源</h2>
+<ol class="source-list">
+  <li>[1] GMI Industry Analysis — <a href="https://www.gminsights.com/industry-analysis/us-utility-terrain-vehicle-utv-market" target="_blank">US Utility Terrain Vehicle Market Size & Share 2024-2032</a></li>
+  <li>[2] Expert Market Research — <a href="https://www.expertmarketresearch.com/reports/atv-and-utv-market" target="_blank">ATV and UTV Market Statistics, Size & Share Analysis, 2034</a></li>
+  <li>[3] Powersports Business — <a href="https://powersportsbusiness.com/top-stories/2026/01/29/data-analysis-utv-market-sales-fall-7-2-in-2024/" target="_blank">Data analysis: UTV market sales fall 7.2% in 2024</a></li>
+  <li>[4] Straits Research — <a href="https://straitsresearch.com/report/atv-and-utv-market" target="_blank">ATV and UTV Market Size, Sales, Share & Growth Forecast by 2033</a></li>
+  <li>[5] Polaris Inc. Investor Relations — <a href="https://s27.q4cdn.com/214071222/files/doc_financials/2024/q4/PII-Q4-2024-Earnings-Release-Final.pdf" target="_blank">Q4 & Full Year 2024 Earnings Release</a></li>
+  <li>[6] BRP Inc. Investor Relations — <a href="https://ir.brp.com/financial-information" target="_blank">BRP Annual Reports</a></li>
+  <li>[7] CFMOTO UK — <a href="https://www.cfmoto.co.uk/top-atv-brand-in-europe-cfmoto/" target="_blank">Top ATV Brand in Europe - CFMOTO</a></li>
+  <li>[8] MotorCyclesData — <a href="https://www.motorcyclesdata.com/2026/01/07/cf-moto/" target="_blank">CF Moto Global Sales - Fact & Data 2025</a></li>
+  <li>[9] Next MSC — <a href="https://www.nextmsc.com/report/europe-atv-and-utv-market" target="_blank">Europe ATV and UTV Market Size and Analysis | 2024-2030</a></li>
+  <li>[10] Next MSC — <a href="https://www.nextmsc.com/report/china-atv-and-utv-market" target="_blank">China ATV and UTV Market Size and Share | 2024-2030</a></li>
+  <li>[11] Next MSC — <a href="https://www.nextmsc.com/report/australia-atv-and-utv-market" target="_blank">Australia ATV and UTV Market Size and Share | 2024-2030</a></li>
+  <li>[12] Next MSC — <a href="https://www.nextmsc.com/report/latin-america-atv-and-utv-market" target="_blank">Latin America ATV and UTV Market Size and Share | 2024-2030</a></li>
+  <li>[13] ACCC Australia — <a href="https://www.productsafety.gov.au/business/search-mandatory-standards/quad-bikes-mandatory-standard" target="_blank">Quad bikes mandatory standard</a></li>
+  <li>[14] HISUN Motors USA — <a href="https://www.hisunmotors.com/news/hisun-motors-usa-introduces-axis-platform-launching-new-retail-focused-utv-lineup/" target="_blank">AXIS Platform Launch via Lowe's</a></li>
+  <li>[15] Polaris.com — <a href="https://www.polaris.com/en-us/off-road/ranger/models/ranger-xp-kinetic/" target="_blank">2024 Ranger XP Kinetic specs</a></li>
+  <li>[16] Volcon / HiConsumption — <a href="https://hiconsumption.com/motors/2024-volcon-epowersports-stag-e-utv/" target="_blank">Volcon Stag specifications and pricing</a></li>
+  <li>[17] BRP PR Newswire — <a href="https://www.prnewswire.com/news-releases/brp-presents-its-fourth-quarter-and-full-year-2025-results-302411464.html" target="_blank">BRP Q4 & Full-Year FY2025 Results</a></li>
+  <li>[18] UTV Driver — <a href="https://www.utvdriver.com/reviews/polaris-xpedition-overlanding-side-by-side-review-2024/" target="_blank">2024 Polaris Xpedition Overlanding Review</a></li>
+  <li>[19] Polaris Market Research — <a href="https://www.polarismarketresearch.com/industry-analysis/all-terrain-vehicle-atv-and-utility-task-vehicle-utv-market" target="_blank">Global ATV and UTV Market Report</a></li>
+  <li>[20] Robotics & Automation News — <a href="https://roboticsandautomationnews.com/2024/05/16/sabanto-system-makes-john-deere-tractors-autonomous/83060/" target="_blank">Sabanto autonomous system for John Deere</a></li>
+  <li>[21] CNBC — <a href="https://www.cnbc.com/2022/10/02/how-deere-plans-to-build-a-world-of-fully-autonomous-farming-by-2030.html" target="_blank">John Deere's autonomous farming 2030 plan</a></li>
+  <li>[22] Verified Market Reports — <a href="https://www.verifiedmarketreports.com/product/atv-utv-accessories-market/" target="_blank">ATV & UTV Accessories Market</a></li>
+  <li>[23] Macrotrends — <a href="https://www.macrotrends.net/stocks/charts/PII/polaris/revenue" target="_blank">Polaris Revenue 2012-2025</a></li>
+</ol>
+
+<footer>
+  <p>📊 报告生成时间:2026-05-14 · 数据截止:2024 年报 + 2025 部分数据</p>
+  <p>本报告为公开信息综合整理,数字以分析师估算为主,仅供参考,不构成投资建议</p>
+</footer>
+
+</div>
+</body>
+</html>
