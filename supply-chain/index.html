@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏭 供应链速查库 - Knowledge Base</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+  <div class="topbar">
+    <a href="../index.html">📚 知识库</a>
+    <span>/</span>
+    <span>供应链速查库</span>
+  </div>
+
+  <h1>🏭 供应链速查库</h1>
+  <p class="subtitle">展会资料整理 · 按能力 / 产品 / 场景快速定位供应商</p>
+
+  <div class="demo-note">⚠️ 这是预览样板，下面 3 家公司均为示例占位数据。</div>
+
+  <!-- 搜索 -->
+  <input type="text" id="search" class="search-box" placeholder="🔍 搜索公司名、能力、产品、场景…">
+
+  <!-- 三类筛选 -->
+  <div class="filter-group">
+    <span class="flabel">能力 / 工艺</span>
+    <div class="chips" id="filter-capabilities"></div>
+  </div>
+  <div class="filter-group">
+    <span class="flabel">产品类别</span>
+    <div class="chips" id="filter-categories"></div>
+  </div>
+  <div class="filter-group">
+    <span class="flabel">应用场景</span>
+    <div class="chips" id="filter-scenarios"></div>
+  </div>
+
+  <div class="result-bar">
+    <span id="result-count"></span>
+    <button class="btn-clear" id="clear-btn">清除筛选</button>
+  </div>
+
+  <!-- 公司卡片 -->
+  <div class="grid" id="grid"></div>
+
+  <footer>知识库 · 供应链板块 · 持续更新中 🔧</footer>
+</div>
+
+<script src="companies.js"></script>
+<script>
+  // 选中的筛选标签（按维度分组）
+  const selected = { capabilities: new Set(), categories: new Set(), scenarios: new Set() };
+  const facets = [
+    { key: "capabilities", el: "filter-capabilities", cls: "cap" },
+    { key: "categories",   el: "filter-categories",   cls: "cat" },
+    { key: "scenarios",    el: "filter-scenarios",    cls: "scn" }
+  ];
+
+  // 从所有公司汇总每个维度的唯一标签，渲染筛选 chip
+  function buildFilters() {
+    facets.forEach(f => {
+      const all = new Set();
+      COMPANIES.forEach(c => (c[f.key] || []).forEach(t => all.add(t)));
+      const box = document.getElementById(f.el);
+      box.innerHTML = "";
+      [...all].sort().forEach(tag => {
+        const chip = document.createElement("span");
+        chip.className = "chip";
+        chip.textContent = tag;
+        chip.onclick = () => {
+          if (selected[f.key].has(tag)) { selected[f.key].delete(tag); chip.classList.remove("active"); }
+          else { selected[f.key].add(tag); chip.classList.add("active"); }
+          render();
+        };
+        box.appendChild(chip);
+      });
+    });
+  }
+
+  // 判断一家公司是否命中当前筛选 + 搜索
+  function matches(c) {
+    // 标签：每个维度内做交集（选了的标签都要满足）
+    for (const f of facets) {
+      for (const tag of selected[f.key]) {
+        if (!(c[f.key] || []).includes(tag)) return false;
+      }
+    }
+    // 搜索：匹配公司名/中文名/简介/所有标签
+    const q = document.getElementById("search").value.trim().toLowerCase();
+    if (q) {
+      const hay = [c.name, c.nameZh, c.summary, c.region,
+                   ...(c.capabilities||[]), ...(c.categories||[]), ...(c.scenarios||[])]
+                   .join(" ").toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  }
+
+  function render() {
+    const grid = document.getElementById("grid");
+    const list = COMPANIES.filter(matches);
+    document.getElementById("result-count").textContent = `共 ${list.length} 家公司`;
+    grid.innerHTML = "";
+    if (list.length === 0) {
+      grid.innerHTML = '<div class="no-result">没有匹配的公司，试试减少筛选条件。</div>';
+      return;
+    }
+    list.forEach(c => {
+      const a = document.createElement("a");
+      a.className = "company-card";
+      a.href = c.detail;
+      a.innerHTML = `
+        <div class="cc-name">${c.name} <span class="cc-region">${c.nameZh ? c.nameZh + " · " : ""}${c.region || ""}</span></div>
+        <div class="cc-summary">${c.summary || ""}</div>
+        <div class="tags">
+          ${(c.capabilities||[]).map(t=>`<span class="tag cap">${t}</span>`).join("")}
+          ${(c.categories||[]).map(t=>`<span class="tag cat">${t}</span>`).join("")}
+          ${(c.scenarios||[]).map(t=>`<span class="tag scn">${t}</span>`).join("")}
+        </div>`;
+      grid.appendChild(a);
+    });
+  }
+
+  document.getElementById("search").addEventListener("input", render);
+  document.getElementById("clear-btn").addEventListener("click", () => {
+    facets.forEach(f => selected[f.key].clear());
+    document.querySelectorAll(".chip.active").forEach(ch => ch.classList.remove("active"));
+    document.getElementById("search").value = "";
+    render();
+  });
+
+  buildFilters();
+  render();
+</script>
+</body>
+</html>
