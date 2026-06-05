@@ -5,6 +5,19 @@
    ============================================================ */
 window.COMPANIES = [
   {
+    slug: "skydroid",
+    name: "SKYDROID",
+    nameZh: "云卓科技（福建）",
+    region: "中国 · 福建泉州",
+    summary: "全球无人系统方案商，自研数据链/图传、飞控、云台相机与整机；国家级专精特新「小巨人」。",
+    capabilities: ["数据链/图传", "飞控", "云台/相机", "整机研发", "SDR 射频", "SMT 贴片"],
+    categories:   ["遥控器", "数据链", "云台/吊舱", "无人机整机", "飞控/配件"],
+    scenarios:    ["低空物流", "巡检/测绘", "安防/应急", "无人车船"],
+    detail: "companies/skydroid.html",
+    source: "2026 产品画册",
+    addedDate: "2026-06-05"
+  },
+  {
     slug: "acme-motors",
     name: "Acme Motors",
     nameZh: "艾克米动力",
