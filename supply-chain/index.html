@@ -109,14 +109,14 @@
       const a = document.createElement("a");
       a.className = "company-card";
       a.href = c.detail;
+      // 卡片只展示「产品类别」标签（最多 3 个），其余维度用于筛选/详情页
+      const cats = c.categories || [];
+      const shownTags = cats.slice(0, 3).map(t => `<span class="tag cat">${t}</span>`).join("");
+      const moreTag = cats.length > 3 ? `<span class="tag-more">+${cats.length - 3}</span>` : "";
       a.innerHTML = `
         <div class="cc-name">${c.name} <span class="cc-region">${c.nameZh ? c.nameZh + " · " : ""}${c.region || ""}</span></div>
         <div class="cc-summary">${c.summary || ""}</div>
-        <div class="tags">
-          ${(c.capabilities||[]).map(t=>`<span class="tag cap">${t}</span>`).join("")}
-          ${(c.categories||[]).map(t=>`<span class="tag cat">${t}</span>`).join("")}
-          ${(c.scenarios||[]).map(t=>`<span class="tag scn">${t}</span>`).join("")}
-        </div>`;
+        <div class="tags">${shownTags}${moreTag}</div>`;
       grid.appendChild(a);
     });
   }

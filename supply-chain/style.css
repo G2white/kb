@@ -156,8 +156,18 @@ strong { color: #fff; }
   text-decoration: none;
 }
 .company-card .cc-name { font-size: 1.2em; font-weight: 700; color: #fff; }
-.company-card .cc-region { font-size: 0.82em; color: var(--text-dim); }
-.company-card .cc-summary { font-size: 0.9em; color: var(--text-dim); line-height: 1.6; flex: 1; }
+.company-card .cc-region { font-size: 0.82em; color: var(--text-dim); font-weight: 400; }
+/* 主营一句话：卡片主角，正文色、稍大，方便一眼看懂 */
+.company-card .cc-summary { font-size: 0.95em; color: var(--text); line-height: 1.65; flex: 1; }
+.tag-more { display: inline-block; padding: 3px 8px; border-radius: 20px; font-size: 0.78em; color: var(--text-dim); background: #232738; }
+
+/* 详情页：标签按维度分组展示 */
+.tag-groups { display: flex; flex-direction: column; gap: 8px; margin: 4px 0 2px; }
+.tg-row { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.tg-label {
+  font-size: 0.78em; color: var(--text-dim); font-weight: 600;
+  width: 48px; flex-shrink: 0;
+}
 
 .no-result { color: var(--text-dim); padding: 40px 0; text-align: center; }
 
