@@ -61,7 +61,7 @@ window.COMPANIES = [
     name: "RAEFLY",
     nameZh: "雷迅飞行",
     region: "中国 · 广州",
-    summary: "VTOL 垂直起降无人机整机供应商（CP900 / VT 系列），含技术服务与执照培训。",
+    summary: "VTOL 垂直起降无人机整机供应商：CP900 多旋翼 + VT240/290 电动 + VT370 油电混动；自有调试基地，含技术服务与民航执照培训。",
     capabilities: ["整机研发", "VTOL 平台", "技术服务/培训"],
     categories:   ["多旋翼无人机", "VTOL 无人机"],
     scenarios:    ["航测", "巡检", "应急救援"],
