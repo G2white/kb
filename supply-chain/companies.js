@@ -37,7 +37,7 @@ window.COMPANIES = [
     region: "中国 · 山东烟台",
     summary: "「蜻蜓」C-UAS 反无人机整体方案商，多传感器探测识别 + 干扰/激光/拦截处置。",
     capabilities: ["雷达探测", "射频侦测/干扰", "激光/拦截处置"],
-    categories:   ["反无系统", "侦干设备", "拦截装备"],
+    categories:   ["反无系统", "探测雷达", "侦干反制", "拦截装备"],
     scenarios:    ["低空安防", "要地防护", "应急处置"],
     detail: "companies/qichuang.html",
     source: "蜻蜓 C-UAS 产品介绍",
